@@ -12,11 +12,19 @@ public class MailController {
     EmailHtmlSender emailHtmlSender;
 
     @RequestMapping(value = "/send")
-    public void send(){
+    public void sendRequest(){
         Context context = new Context();
 //        context.setVariable("title", "Lorem Ipsum");
 //        context.setVariable("description", "Lorem Lorem Lorem");
         EmailStatus emailStatus = emailHtmlSender.send("sebastian.kt7@gmail.com", "Title of email", "mail/send-notification", context);
 
+    }
+
+    @RequestMapping(value = "/sendinfo")
+    public void sendInfo(){
+        Context context = new Context();
+//        context.setVariable("title", "Lorem Ipsum");
+//        context.setVariable("description", "Lorem Lorem Lorem");
+        EmailStatus emailStatus = emailHtmlSender.send("sebastian.kt7@gmail.com", "Title of email", "mail/send-information", context);
     }
 }
