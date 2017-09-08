@@ -11,12 +11,12 @@ public class MailController {
     @Autowired
     EmailHtmlSender emailHtmlSender;
 
-//    @RequestMapping(value = "/send")
-//    public void send(){
-//        Context context = new Context();
+    @RequestMapping(value = "/send")
+    public void send(){
+        Context context = new Context();
 //        context.setVariable("title", "Lorem Ipsum");
 //        context.setVariable("description", "Lorem Lorem Lorem");
-//        EmailStatus emailStatus = emailHtmlSender.send("sebastian.kt7@gmail.com", "Title of email", "email/notification", context);
-//
-//    }
+        EmailStatus emailStatus = emailHtmlSender.send("sebastian.kt7@gmail.com", "Title of email", "mail/send-notification", context);
+
+    }
 }
