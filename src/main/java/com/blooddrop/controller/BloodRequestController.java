@@ -16,12 +16,12 @@ public class BloodRequestController {
     @Autowired
     private BloodRequestService bloodRequestService;
 
-    @RequestMapping(value = "/", method = {RequestMethod.POST, RequestMethod.GET})
+    @RequestMapping(value = "", method = {RequestMethod.POST})
     public void addBloodRequest(@RequestBody BloodRequest bloodRequest) {
         System.out.println(bloodRequest);
     }
 
-    @RequestMapping(value = "/new")
+    @RequestMapping(value = "")
     public String createBloodRequest(Model model){
         return "createBloodRequest";
     }
