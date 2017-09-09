@@ -146,6 +146,22 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
     color: white!important;
     border-color: white;
 }
+.info-button{
+    font-size: 10px;
+    padding: 15px 15px;
+    height: auto;
+    line-height: 100%;
+    display: inline-block;
+    margin-top: 15px;
+    color:white;
+}
+.info-button:hover{
+    text-underline: none;
+    color:white;
+}
+.info-block{
+    text-align: center;
+}
 @media screen and (max-width: 990px) {
     .desktop{
         display: none;

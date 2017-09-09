@@ -49,9 +49,8 @@ public class AppController {
         return "requestResults";
     }
 
-    @RequestMapping(value = "info",method = RequestMethod.GET)
+    @RequestMapping(value = "infopage",method = RequestMethod.GET)
     public String infoPage(Model model) {
-        System.out.println("aaa");
         return "info";
     }
 
