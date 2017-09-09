@@ -28,6 +28,7 @@ public class AppController {
 
     @PostMapping("fill")
     public String onRegister(@ModelAttribute Donor donor) {
+        donorService.addDonor(donor);
         return "results";
     }
 }
