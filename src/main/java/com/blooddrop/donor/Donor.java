@@ -20,6 +20,13 @@ public class Donor {
     public Donor() {
     }
 
+    public Donor(String email, String name, String city, BloodGroup bloodGroup) {
+        this.email = email;
+        this.name = name;
+        this.city = city;
+        this.bloodGroup = bloodGroup;
+    }
+
     public Long getId() {
         return id;
     }

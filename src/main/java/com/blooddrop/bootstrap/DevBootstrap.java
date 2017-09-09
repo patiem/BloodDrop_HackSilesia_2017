@@ -25,9 +25,9 @@ public class DevBootstrap implements ApplicationListener<ContextRefreshedEvent> 
     }
 
     private void onInit() {
-        donorService.addDonor(new Donor("bujakowski@gmail.com", "Krakow", BloodGroup.B_Rh_minus));
-        donorService.addDonor(new Donor("pgurdek@gmail.com", "Krakow", BloodGroup.Zero_Rh_minus));
-        donorService.addDonor(new Donor("sebastian.kurant@gmail.com", "Krakow", BloodGroup.B_Rh_minus));
+        donorService.addDonor(new Donor("bujakowski@gmail.com","tomek", "Krakow", BloodGroup.B_Rh_minus));
+        donorService.addDonor(new Donor("pgurdek@gmail.com","Piotrek", "Krakow", BloodGroup.Zero_Rh_minus));
+        donorService.addDonor(new Donor("sebastian.kurant@gmail.com","Seba", "Krakow", BloodGroup.B_Rh_minus));
     }
 
 }
