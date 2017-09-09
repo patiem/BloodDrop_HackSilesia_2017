@@ -77,7 +77,12 @@
         <input id="data" th:name="date" th:field="*{date}" type="text" class="datepicker"/>
     </div>
     <div class="input-field col s12">
-        <input th:name="rck" id="rck" th:field="*{rck}" type="text" class="validate"/>
+        <select name="rck" id="rck" th:field="*{rck}">
+            <option value="" disabled="disabled" selected="selected">Wybierz grupę krwi</option>
+            <option value="rck_krakow">RCK Krakowskie</option>
+            <option value="rck_katowice">RCK Katowickie</option>
+            <option value="rck_warszawskie">RCK Warszawskie</option>
+        </select>
         <label for="rck">Rck</label>
     </div>
     <div class="input-field col s12">
