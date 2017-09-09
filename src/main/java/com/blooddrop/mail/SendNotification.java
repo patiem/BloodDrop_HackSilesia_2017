@@ -23,8 +23,8 @@ public class SendNotification {
         for (Donor donor :
                 listOfDonors) {
             Context context = new Context();
-//        context.setVariable("title", "Lorem Ipsum");
-//        context.setVariable("description", "Lorem Lorem Lorem");
+            context.setVariable("donorid", donor.getId());
+            context.setVariable("requestid", bloodRequest.getId());
             EmailStatus emailStatus = emailHtmlSender.send(donor.getEmail(), "We need your blood to save live!", "mail/send-notification", context);
         }
     }
