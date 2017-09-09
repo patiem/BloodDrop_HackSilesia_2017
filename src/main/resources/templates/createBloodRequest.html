@@ -79,15 +79,26 @@
     <div class="input-field col s12">
         <select name="rck" id="rck" th:field="*{rck}">
             <option value="" disabled="disabled" selected="selected">Wybierz RCK</option>
-            <option value="RCK Krakow">RCK Krakowskie</option>
-            <option value="RCK Katowice">RCK Katowickie</option>
-            <option value="RCK Warszawa">RCK Warszawskie</option>
+            <option value="RCK Krakow">RCK Kraków</option>
+            <option value="RCK Katowice">RCK Katowice</option>
+            <option value="RCK Warszawa">RCK Warszawa</option>
+            <option value="RCK Warszawa">RCK Gdańsk</option>
+            <option value="RCK Warszawa">RCK Poznań</option>
         </select>
-        <label for="rck">Rck</label>
+        <label for="rck">RCK</label>
     </div>
-    <div class="input-field col s12">
-        <input th:name="city" id="city" th:field="*{city}" type="text" class="validate"/>
-        <label for="city">City</label>
+    <div class="row">
+        <div class="input-field col s12">
+            <select name="city" id="city" th:field="*{city}">
+                <option value="" th:disabled="disabled" th:selected="selected">Wybierz miasto</option>
+                <option value="Katowice">Katowice</option>
+                <option value="Krakow">Kraków</option>
+                <option value="Warszawa">Warszawa-</option>
+                <option value="Gdansk">Gdańsk</option>
+                <option value="Poznan">Poznań</option>
+            </select>
+            <label for="city">Miasto</label>
+        </div>
     </div>
     <div class="input-field col s12">
         <input id="patient" type="text" th:field="*{patient}" class="validate"/>
