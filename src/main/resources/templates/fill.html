@@ -38,18 +38,23 @@
 </head>
 <body>
 <div class="row">
-    <form class="col s12" th:action="@{~/fill}" method="POST">
+    <form class="col s12" th:action="@{~/fill}" th:object="${donor}" modelAttribute="donor" method="POST">
 
         <div class="row">
             <div class="input-field col s6">
-                <input placeholder="Placeholder" id="first_name" type="text" class="validate" />
-                <label for="first_name">Name</label>
+                <input placeholder="Placeholder" name="name" id="name" type="text" th:field="*{name}" class="validate" />
+                <label for="name">Name</label>
             </div>
         </div>
-
+        <div class="row">
+            <div class="input-field col s6">
+                <input id="email" name="email" type="email" th:field="*{email}" class="validate" />
+                <label for="email">Email</label>
+            </div>
+        </div>
         <div class="row">
         <div class="input-field col s6">
-            <select id="blood">
+            <select name="bloodGroup" id="bloodGroup" th:field="*{bloodGroup}">
                 <option value="" disabled="disabled" selected="selected">Choose your option</option>
                 <option value="A_Rh_minus">A RH-</option>
                 <option value="A_Rh_plus">A RH+</option>
@@ -61,18 +66,12 @@
                 <option value="0_Rh_plus">0 RH+</option>
 
             </select>
-            <label for="blood">Select blood group</label>
+            <label for="bloodGroup">Select blood group</label>
         </div>
         </div>
         <div class="row">
             <div class="input-field col s6">
-                <input id="email" type="email" class="validate" />
-                <label for="email">Email</label>
-            </div>
-        </div>
-        <div class="row">
-            <div class="input-field col s6">
-                <input id="city" type="password" class="validate" />
+                <input id="city" name="city" type="text" th:field="*{city}" class="validate" />
                 <label for="city">City</label>
             </div>
         </div>
