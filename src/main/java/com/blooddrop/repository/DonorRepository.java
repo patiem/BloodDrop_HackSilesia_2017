@@ -9,5 +9,6 @@ import java.util.List;
 
 @Repository
 public interface DonorRepository extends CrudRepository<Donor, Long> {
+    Donor getDonorById(Long id);
     List<Donor> getAllDonorsByBloodGroup(BloodGroup bloodGroup);
 }
