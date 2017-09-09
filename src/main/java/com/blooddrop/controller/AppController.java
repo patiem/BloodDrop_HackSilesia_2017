@@ -39,6 +39,7 @@ public class AppController {
     public String login(Model model) {
         return "login";
     }
+
     @RequestMapping("requestResults")
     public String requestResults(Model model) {
         return "requestResults";
