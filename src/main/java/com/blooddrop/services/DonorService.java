@@ -11,6 +11,10 @@ public class DonorService {
     @Autowired
     private DonorRepository donorRepository;
 
+    public Donor getDonorById(Long id) {
+        return donorRepository.getDonorById(id);
+    }
+
     public void addDonor(Donor donor) {
         donorRepository.save(donor);
     }
