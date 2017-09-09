@@ -56,7 +56,7 @@
 
 
 <form class="form-default col-6 center" th:method="post" th:action="@{~/bloodrequest}" th:object="${bloodRequest}" style="max-width: 600px;margin:0 auto;">
-    <h3>Blood Group</h3>
+    <h3>Grupa Krwi</h3>
     <div class="input-field col s12">
         <select name="bloodGroup" id="bloodGroup" th:field="*{bloodGroup}">
             <option value="" disabled="disabled" selected="selected">Wybierz grupę krwi</option>
@@ -85,7 +85,7 @@
         <label for="patient">Pacjent (opcjonalnie) </label>
     </div>
     <button class="waves-effect waves-light btn-large red darken-3" type="Submit" value="Add">
-        <i class="material-icons right">invert_colors</i>SEND</button>
+        <i class="material-icons right">invert_colors</i>Wyślij</button>
 
 
     </form>
