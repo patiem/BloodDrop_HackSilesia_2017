@@ -17,7 +17,7 @@ public class DonorService {
     private DonorRepository donorRepository;
 
     public List<Donor> getAllAvailableDonors(BloodGroup bloodGroup, String city, Date date) {
-        date = ShiftDate.addDays(date, 60);
+        date = ShiftDate.addDays(date, -60);
         return donorRepository.getAllDonorsByBloodGroupAndLastDonateDateBeforeAndCityEquals(bloodGroup, date, city);
     }
 
