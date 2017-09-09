@@ -72,6 +72,9 @@ p{
     font-size:28px;
     display: inline-block;
 }
+.info-stick{
+    top: calc(50% - 80px);
+}
 form{
     max-width: 600px;
     margin:0 auto;
@@ -115,7 +118,7 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
     color: #fff;
     display: inline-block;
     font-size: 2.1rem;
-    padding: 0;
+    padding: 0px 5px;
 }
 .mobile{
     display: none;
@@ -169,6 +172,10 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
     .rck-sign{
         position: absolute;
         top:45%;
+    }
+    .info-stick{
+        top: calc(45% - 80px);
+
     }
 }
 

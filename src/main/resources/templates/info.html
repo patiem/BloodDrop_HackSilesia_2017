@@ -42,26 +42,14 @@
     <div class="nav-wrapper container">
         <a id="logo-container" href="#" class="brand-logo"><i class="large material-icons">invert_colors</i>DROPBLOOD</a>
         <ul class="right desktop">
-            <li><a class="donorNumber" href="#" th:text="'Jest już znami ' + ${donorNumber + 114}"></a></li>
-        </ul>
-        <ul class="right mobile">
-            <li><i class="material-icons">group</i></li>
-            <li><span th:text="${donorNumber + 114}"></span></li>
-
+            <!--<li><a class="donorNumber" href="#" th:text="'Jest już znami ' + ${donorNumber + 114}"></a></li>-->
         </ul>
         <!--<a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>-->
     </div>
 </nav>
     <div class="section no-pad-bot" id="index-banner">
         <div class="container">
-            <h3 class=" center red-text text-red-darken-4">DON'T BE AFFRAID TO SAFE LIFES</h3>
-            <br/>
-            <div class="row center">
-                <a th:href="@{~/fill}"  class="btn btn-floating btn-large pulse red darken-3" style="width: 200px; height: 200px"><i class="large material-icons " style="font-size: 200px; line-height: 188px;">invert_colors</i>
-                </a>
-            <br/>
-                <a th:href="@{~/fill}" id="download-button" class="btn-large waves-effect waves-light red darken-3" style="margin-top: 10px">Dołącz do nas</a>
-            </div>
+            <h3 class=" center red-text text-red-darken-4">Informacje o krwiodastwie</h3>
         </div>
     </div>
 <div class="container">
@@ -72,32 +60,42 @@
             <div class="col s12 m4">
                 <div class="icon-block">
 
-                    <p class="center light-blue-text"><i class="material-icons medium red-text text-darken-3">view_list</i></p>
-                    <h5 class="center">Wypełnij formularz</h5>
+                    <p class="center light-blue-text"><i class="material-icons medium red-text text-darken-3">accessibility</i></p>
+                    <h5 class="center">Kto moze oddac krew</h5>
 
-                    <p class="light">Kliknij w kropelkę. Zostaw swoje imię, email i miasto, w którym mieszkasz. I oczywiście swoją grupę krwi.</p>
+                    <p class="light"> Jeśli masz wątpliwości, czy Twój stan zdrowia pozwala na oddanie krwi, musisz wiedzieć, że...</p>
+                    <a class="btn-large waves-effect waves-light red darken-3 info-button" target="_blank"
+                       href="http://www.darkrwi.info.pl/portal/pokaz/7/kto-nie-moze-oddac-krwi.html">Dowiedz się więcej</a>
                 </div>
             </div>
 
-            <div class="col s12 m4">
-                <div class="icon-block">
-                    <p class="center light-blue-text"><i class="material-icons medium red-text text-darken-3">mail</i></p>
-                    <h5 class="center">Spodziewaj się maila</h5>
-
-                    <p class="light">Jeśli będzie zapotrzebowanie na krew, która płynie w twoich żyłach, dostaniesz maila z prośbą o dołączenie do zbiórki</p>
-                </div>
-            </div>
 
             <div class="col s12 m4">
                 <div class="icon-block">
-                    <p class="center light-blue-text"><i class="material-icons medium red-text text-darken-3">mood</i></p>
-                    <h5 class="center">Daj znać czy się zjawisz</h5>
+                    <p class="center light-blue-text"><i class="material-icons medium red-text text-darken-3">av_timer</i></p>
+                    <h5 class="center">Jak się przygotować</h5>
 
-                    <p class="light">Jeśli dasz radę oddać krew, kliknij w mailu TAK, wyślemy Ci maila ze szczegółami: gdzie i dla kogo.   </p>
+                    <p class="light">W krwioobiegu dorosłego człowieka krąży ok. 5 - 6 l. krwi. Częstotliwość, rodzaj i objętość donacji ustala lekarz... </p>
+                    <a class="btn-large waves-effect waves-light red darken-3 info-button" target="_blank"
+                       href="http://www.rckik-warszawa.com.pl/jak-przygotowa%C4%87-si%C4%99-do-oddania-krwi.html">Dowiedz się więcej</a>
+
                 </div>
             </div>
         </div>
 
+
+        <div class="col s12 m4">
+            <div class="icon-block">
+                <p class="center light-blue-text"><i class="material-icons medium red-text text-darken-3">equalizer</i></p>
+                <h5 class="center">Statystyki</h5>
+
+                <p class="light">Zobacz jak przepływała krew przez lata...</p>
+
+
+                <a class="btn-large waves-effect waves-light red darken-3 info-button" target="_blank"
+                   href="https://krwiodawcy.org/statystyki">Dowiedz się więcej</a>
+            </div>
+        </div>
     </div>
     <br/><br/>
     <div class="rck-sign info-stick">
