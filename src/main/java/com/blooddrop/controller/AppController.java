@@ -63,7 +63,11 @@ public class AppController {
 
     @PostMapping("fill")
     public String onRegister(@ModelAttribute Donor donor) {
+        if (donor.getLastDonateDate() == null) {
+            donor.setDeafultDate();
+        }
         donorService.addDonor(donor);
+        System.out.println(donor);
         return "results";
     }
 }

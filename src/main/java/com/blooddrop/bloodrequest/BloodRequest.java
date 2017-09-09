@@ -80,4 +80,16 @@ public class BloodRequest {
     public void setPatient(String patient) {
         this.patient = patient;
     }
+
+    @Override
+    public String toString() {
+        return "BloodRequest{" +
+                "id=" + id +
+                ", bloodGroup=" + bloodGroup +
+                ", date=" + date +
+                ", rck='" + rck + '\'' +
+                ", city='" + city + '\'' +
+                ", patient='" + patient + '\'' +
+                '}';
+    }
 }

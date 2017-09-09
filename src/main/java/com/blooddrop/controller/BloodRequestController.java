@@ -30,6 +30,7 @@ public class BloodRequestController {
         bloodRequestService.addBloodRequest(bloodRequest);
         Integer count = sendNotification.sendNotificationToDonors(bloodRequest);
         model.addAttribute("count", count);
+        System.out.println(bloodRequest);
         return "requestResults";
     }
 
