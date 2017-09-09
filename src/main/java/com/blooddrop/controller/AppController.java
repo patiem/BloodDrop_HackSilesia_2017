@@ -17,6 +17,9 @@ public class AppController {
 
     @RequestMapping("")
     public String index(Model model) {
+
+        model.addAttribute("donorNumber", donorService.getDonorsNumber());
+
         return "index";
     }
 
