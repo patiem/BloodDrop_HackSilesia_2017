@@ -13,13 +13,11 @@ public class Donor {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String email;
+    private String name;
     private String city;
     private BloodGroup bloodGroup;
 
-    public Donor(String email, String city, BloodGroup bloodGroup) {
-        this.email = email;
-        this.city = city;
-        this.bloodGroup = bloodGroup;
+    public Donor() {
     }
 
     public Long getId() {
@@ -46,11 +44,24 @@ public class Donor {
         this.city = city;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public BloodGroup getBloodGroup() {
         return bloodGroup;
     }
 
     public void setBloodGroup(BloodGroup bloodGroup) {
         this.bloodGroup = bloodGroup;
+    }
+
+    @Override
+    public String toString() {
+        return new StringBuilder(this.getEmail() + this.getBloodGroup()).toString();
     }
 }
