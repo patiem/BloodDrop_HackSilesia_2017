@@ -18,7 +18,7 @@ public class SendNotification {
     @Autowired
     EmailHtmlSender emailHtmlSender;
 
-    public void sendNotificationToDonors(BloodRequest bloodRequest) {
+    public Integer sendNotificationToDonors(BloodRequest bloodRequest) {
         List<Donor> listOfDonors = bloodRequestService.getAllDonorsByBloodGroup(bloodRequest.getBloodGroup());
         for (Donor donor :
                 listOfDonors) {
@@ -26,6 +26,8 @@ public class SendNotification {
             context.setVariable("donorid", donor.getId());
             context.setVariable("requestid", bloodRequest.getId());
             EmailStatus emailStatus = emailHtmlSender.send(donor.getEmail(), "We need your blood to save live!", "mail/send-notification", context);
-        }
+
+    }
+        return listOfDonors.size();
     }
 }
