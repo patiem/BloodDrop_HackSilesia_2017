@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 @RequestMapping("/")
@@ -41,7 +42,13 @@ public class AppController {
     }
 
     @RequestMapping("requestResults")
-    public String requestResults(Model model) {
+    public String requestResults(@RequestParam(required=false) Integer count ,Model model) {
+        System.out.println(count);
+        if (count != null){
+            model.addAttribute("count",count);
+        }else{
+            model.addAttribute("count",0);
+        }
         return "requestResults";
     }
 
