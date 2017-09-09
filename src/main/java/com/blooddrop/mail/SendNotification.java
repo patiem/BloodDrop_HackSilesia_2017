@@ -3,6 +3,7 @@ package com.blooddrop.mail;
 import com.blooddrop.bloodrequest.BloodRequest;
 import com.blooddrop.donor.Donor;
 import com.blooddrop.services.BloodRequestService;
+import com.blooddrop.services.DonorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.thymeleaf.context.Context;
@@ -16,9 +17,12 @@ public class SendNotification {
     BloodRequestService bloodRequestService;
 
     @Autowired
+    DonorService donorService;
+
+    @Autowired
     EmailHtmlSender emailHtmlSender;
 
-    public void sendNotificationToDonors(BloodRequest bloodRequest) {
+    public Integer sendNotificationToDonors(BloodRequest bloodRequest) {
         List<Donor> listOfDonors = bloodRequestService.getAllDonorsByBloodGroup(bloodRequest.getBloodGroup());
         for (Donor donor :
                 listOfDonors) {
@@ -26,6 +30,8 @@ public class SendNotification {
             context.setVariable("donorid", donor.getId());
             context.setVariable("requestid", bloodRequest.getId());
             EmailStatus emailStatus = emailHtmlSender.send(donor.getEmail(), "We need your blood to save live!", "mail/send-notification", context);
-        }
+
+    }
+        return listOfDonors.size();
     }
 }
