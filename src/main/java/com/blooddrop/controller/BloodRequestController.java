@@ -17,13 +17,15 @@ public class BloodRequestController {
     @Autowired
     private BloodRequestService bloodRequestService;
 
+    @Autowired
+    private SendNotification sendNotification;
+
 
     @RequestMapping(value = "", method = {RequestMethod.POST})
-    public void addBloodRequest(@ModelAttribute BloodRequest bloodRequest) {
+    public String addBloodRequest(@ModelAttribute BloodRequest bloodRequest) {
         bloodRequestService.addBloodRequest(bloodRequest);
-//        SendNotification sendNotification = new SendNotification();
-//        sendNotification.sendNotificationToDonors(bloodRequest);
-        System.out.println(bloodRequest);
+        sendNotification.sendNotificationToDonors(bloodRequest);
+        return "redirect:/";
     }
 
     @RequestMapping(value = "/{donorid}&{requestid}", method = {RequestMethod.POST})
