@@ -24,14 +24,15 @@ public class BloodRequestController {
     private SendNotification sendNotification;
 
 
-    @RequestMapping(value = "", method = {RequestMethod.POST})
+    @PostMapping(value = "")
     public String addBloodRequest(@ModelAttribute BloodRequest bloodRequest,Model model) {
         System.out.println(bloodRequest.getDate());
         bloodRequestService.addBloodRequest(bloodRequest);
 //        BloodRequest test = bloodRequestService.getById(bloodRequest.getId());
 //        model.addAttribute("bloodRequest", test);
+        model.addAttribute("count", bloodRequestService.getAllBloodRequests().size());
         sendNotification.sendNotificationToDonors(bloodRequest);
-        return "redirect:requestResults";
+        return "requestResults";
     }
 
     @RequestMapping(value = "/{donorid}/{requestid}")
