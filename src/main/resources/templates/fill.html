@@ -37,12 +37,20 @@
 
 </head>
 <body>
+<nav class="red darken-3 lighten-1" role="navigation">
+
+<div class="nav-wrapper container">
+    <a id="logo-container " href="#" class="brand-logo"><i class="large material-icons">invert_colors</i>DROPBLOOD</a>
+
+    <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+</div>
+</nav>
 <div class="row">
     <form class="col s12" th:action="@{~/fill}" method="POST">
 
         <div class="row">
             <div class="input-field col s6">
-                <input placeholder="Placeholder" id="first_name" type="text" class="validate" />
+                <input id="first_name" type="text" class="validate" />
                 <label for="first_name">Name</label>
             </div>
         </div>
@@ -72,7 +80,7 @@
         </div>
         <div class="row">
             <div class="input-field col s6">
-                <input id="city" type="password" class="validate" />
+                <input id="city" type="text" class="validate" />
                 <label for="city">City</label>
             </div>
         </div>
