@@ -2,10 +2,10 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8" />
-    <meta name="author" content="Codecool" />
+    <meta name="author" content="Wicked Puppets" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Codecool Shop</title>
+    <title>Blood Drop</title>
 
     <!-- Latest compiled and minified Jquery -->
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"
@@ -37,7 +37,34 @@
 
 </head>
 <body>
-<p th:text="'We know your blood: ' + ${donor.name}" />
-<p th:text="'Its: ' + ${donor.bloodGroup}" />
+<nav class="red darken-3 lighten-1" role="navigation">
+
+    <div class="nav-wrapper container">
+        <a id="logo-container " th:href="@{~/}" class="brand-logo"><i class="large material-icons">invert_colors</i>DROPBLOOD</a>
+
+        <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+</nav>
+<br/>
+<div class="container center">
+    <div class="row">
+        <div class="col s12 m6">
+            <div class="card red darken-3 lighten-1">
+                <div class="card-content white-text">
+                    <h4>Dziękujemy!!</h4>
+                    <span class="card-title">
+
+                        Już w krótce twoja krew może uratować komuś życie!
+                        Nie zapomnij powiedzieć o nas znajomym.
+                    </span>
+                </div>
+                <div class="card-action">
+                    <a th:href="@{~/}">Powrót na główną stronę</a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>
