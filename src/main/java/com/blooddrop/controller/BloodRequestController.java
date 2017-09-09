@@ -18,6 +18,9 @@ public class BloodRequestController {
     private BloodRequestService bloodRequestService;
 
     @Autowired
+    private SendInformation sendInformation;
+
+    @Autowired
     private SendNotification sendNotification;
 
 
@@ -28,10 +31,10 @@ public class BloodRequestController {
         return "redirect:/";
     }
 
-    @RequestMapping(value = "/{donorid}&{requestid}", method = {RequestMethod.POST})
-    public void sendBloodRequestInformation(@PathVariable("donorId") long donorid, @PathVariable("requestid") long requestid) {
-        SendInformation sendInformation = new SendInformation();
+    @RequestMapping(value = "/{donorid}/{requestid}")
+    public String sendBloodRequestInformation(@PathVariable("donorid") long donorid, @PathVariable("requestid") long requestid) {
         sendInformation.sendInformation(donorid, requestid);
+        return "mail/thanks";
     }
 
     @RequestMapping(value = "")
