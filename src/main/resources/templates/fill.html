@@ -64,25 +64,32 @@
             </div>
         </div>
         <div class="row">
-        <div class="input-field col s12">
-            <select name="bloodGroup" id="bloodGroup" th:field="*{bloodGroup}">
-                <option value="" th:disabled="disabled" th:selected="selected">Wybierz grupę krwi</option>
-                <option value="A_Rh_minus">A RH-</option>
-                <option value="A_Rh_plus">A RH+</option>
-                <option value="B_Rh_minus">B RH-</option>
-                <option value="B_Rh_plus">B RH+</option>
-                <option value="AB_Rh_minus">AB RH-</option>
-                <option value="AB_Rh_plus">AB RH+</option>
-                <option value="Zero_Rh_minus">0 RH-</option>
-                <option value="Zero_Rh_plus">0 RH+</option>
+            <div class="input-field col s12">
+                <select name="bloodGroup" id="bloodGroup" th:field="*{bloodGroup}">
+                    <option value="" th:disabled="disabled" th:selected="selected">Wybierz grupę krwi</option>
+                    <option value="A_Rh_minus">A RH-</option>
+                    <option value="A_Rh_plus">A RH+</option>
+                    <option value="B_Rh_minus">B RH-</option>
+                    <option value="B_Rh_plus">B RH+</option>
+                    <option value="AB_Rh_minus">AB RH-</option>
+                    <option value="AB_Rh_plus">AB RH+</option>
+                    <option value="Zero_Rh_minus">0 RH-</option>
+                    <option value="Zero_Rh_plus">0 RH+</option>
 
-            </select>
-            <label for="bloodGroup">Grupa krwi</label>
-        </div>
+                </select>
+                <label for="bloodGroup">Grupa krwi</label>
+            </div>
         </div>
         <div class="row">
             <div class="input-field col s12">
-                <input id="city" name="city" type="text" th:field="*{city}" class="validate" />
+                <select name="city" id="city" th:field="*{city}">
+                    <option value="" th:disabled="disabled" th:selected="selected">Wybierz miasto</option>
+                    <option value="Katowice">Katowice</option>
+                    <option value="Krakow">Kraków</option>
+                    <option value="Warszawa">Warszawa-</option>
+                    <option value="Gdansk">Gdańsk</option>
+                    <option value="Poznan">Poznań</option>
+                </select>
                 <label for="city">Miasto</label>
             </div>
         </div>
