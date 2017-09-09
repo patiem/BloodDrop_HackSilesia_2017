@@ -24,9 +24,11 @@ public class SendInformation {
         Donor donor = donorService.getDonorById(donorId);
         BloodRequest bloodRequest = bloodRequestService.getById(requestid);
         Context context = new Context();
-        context.setVariable("id", bloodRequest.getId());
-        context.setVariable("date", bloodRequest.getDate());
-        context.setVariable("address", bloodRequest.getRck());
+        context.setVariable("rck", bloodRequest.getRck());
+        context.setVariable("address", bloodRequest.getCity());
+        context.setVariable("patient", bloodRequest.getPatient());
+        context.setVariable("donorid", donor.getId());
+        context.setVariable("requestid", bloodRequest.getId());
         EmailStatus emailStatus = emailHtmlSender.send(donor.getEmail(), "We need your blood to save live!", "mail/send-information", context);
     }
 }

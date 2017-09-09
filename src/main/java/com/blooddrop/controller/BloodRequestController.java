@@ -28,9 +28,6 @@ public class BloodRequestController {
     public String addBloodRequest(@ModelAttribute BloodRequest bloodRequest,Model model) {
         System.out.println(bloodRequest.getDate());
         bloodRequestService.addBloodRequest(bloodRequest);
-//        BloodRequest test = bloodRequestService.getById(bloodRequest.getId());
-//        model.addAttribute("bloodRequest", test);
-        System.out.println(bloodRequestService.getAllBloodRequests().size());
         Integer count = sendNotification.sendNotificationToDonors(bloodRequest);
         model.addAttribute("count", count);
         return "requestResults";
