@@ -40,20 +40,19 @@
 <nav class="red darken-3 lighten-1" role="navigation">
 
 <div class="nav-wrapper container">
-    <a id="logo-container " href="#" class="brand-logo"><i class="large material-icons">invert_colors</i>DROPBLOOD</a>
+    <a id="logo-container " th:href="@{~/}" class="brand-logo"><i class="large material-icons">invert_colors</i>DROPBLOOD</a>
 
     <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
 </div>
 </nav>
+<br/>
 <div class="row">
     <form class="col s12" th:action="@{~/fill}" th:object="${donor}" modelAttribute="donor" method="POST">
 
         <div class="row">
             <div class="input-field col s6">
-                <input placeholder="Placeholder" name="name" id="name" type="text" th:field="*{name}" class="validate" />
+                <input name="name" id="name" type="text" th:field="*{name}" class="validate" />
                 <label for="name">Name</label>
-                <input id="first_name" type="text" class="validate" />
-                <label for="first_name">Name</label>
             </div>
         </div>
 
@@ -66,7 +65,7 @@
         <div class="row">
         <div class="input-field col s6">
             <select name="bloodGroup" id="bloodGroup" th:field="*{bloodGroup}">
-                <option value="" disabled="disabled" selected="selected">Choose your option</option>
+                <option value="" th:disabled="disabled" th:selected="selected">Choose your option</option>
                 <option value="A_Rh_minus">A RH-</option>
                 <option value="A_Rh_plus">A RH+</option>
                 <option value="B_Rh_minus">B RH-</option>
@@ -77,7 +76,7 @@
                 <option value="0_Rh_plus">0 RH+</option>
 
             </select>
-            <label for="blood">Select blood group</label>
+            <label for="bloodGroup">Select blood group</label>
         </div>
         </div>
         <div class="row">
