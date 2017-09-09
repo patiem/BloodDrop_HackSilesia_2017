@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 @Entity
@@ -19,9 +21,19 @@ public class Donor {
     private String city;
     private BloodGroup bloodGroup;
     @DateTimeFormat(pattern="dd-MM-yyyy")
-    private Date lastDonateDate;
+    private Date lastDonateDate = setDeafultDate();
+
+    private Date setDeafultDate() {
+        try {
+            return new SimpleDateFormat("yyyy-MM-dd").parse( "2017-03-29");
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 
     public Donor() {
+        System.out.println(this.lastDonateDate);
     }
 
     public Donor(String email, String name, String city, BloodGroup bloodGroup, Date lastDonateDate) {
