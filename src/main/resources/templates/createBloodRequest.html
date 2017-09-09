@@ -56,7 +56,7 @@
 
 
 <form class="form-default col-6 center" th:method="post" th:action="@{~/bloodrequest}" th:object="${bloodRequest}" style="max-width: 600px;margin:0 auto;">
-    <h3>Grupa Krwi</h3>
+    <h3>Zapytanie o krew</h3>
     <div class="input-field col s12">
         <select name="bloodGroup" id="bloodGroup" th:field="*{bloodGroup}">
             <option value="" disabled="disabled" selected="selected">Wybierz grupę krwi</option>
