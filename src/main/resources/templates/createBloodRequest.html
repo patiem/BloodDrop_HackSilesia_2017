@@ -77,8 +77,12 @@
         <input id="data" th:name="date" th:field="*{date}" type="text" class="datepicker"/>
     </div>
     <div class="input-field col s12">
-        <input th:name="date" id="adress" th:field="*{address}" type="text" class="validate"/>
-        <label for="adress">Adres</label>
+        <input th:name="rck" id="rck" th:field="*{rck}" type="text" class="validate"/>
+        <label for="rck">Rck</label>
+    </div>
+    <div class="input-field col s12">
+        <input th:name="city" id="city" th:field="*{city}" type="text" class="validate"/>
+        <label for="city">City</label>
     </div>
     <div class="input-field col s12">
         <input id="patient" type="text" th:field="*{patient}" class="validate"/>
