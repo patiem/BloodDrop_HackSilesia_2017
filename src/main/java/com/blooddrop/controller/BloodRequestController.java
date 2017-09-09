@@ -1,6 +1,7 @@
 package com.blooddrop.controller;
 
 import com.blooddrop.bloodrequest.BloodRequest;
+import com.blooddrop.mail.SendNotification;
 import com.blooddrop.services.BloodRequestService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,9 +17,12 @@ public class BloodRequestController {
     @Autowired
     private BloodRequestService bloodRequestService;
 
+
     @RequestMapping(value = "", method = {RequestMethod.POST})
     public void addBloodRequest(@RequestBody BloodRequest bloodRequest) {
-        System.out.println(bloodRequest);
+        SendNotification sendNotification = new SendNotification();
+        sendNotification.sendNotificationToDonors(bloodRequest);
+
     }
 
     @RequestMapping(value = "")
