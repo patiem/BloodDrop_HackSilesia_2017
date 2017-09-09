@@ -53,7 +53,7 @@
         <div class="row">
             <div class="input-field col s12">
                 <input name="name" id="name" type="text" th:field="*{name}" class="validate" />
-                <label for="name">Name</label>
+                <label for="name">Imię</label>
             </div>
         </div>
 
@@ -66,7 +66,7 @@
         <div class="row">
         <div class="input-field col s12">
             <select name="bloodGroup" id="bloodGroup" th:field="*{bloodGroup}">
-                <option value="" th:disabled="disabled" th:selected="selected">Choose your option</option>
+                <option value="" th:disabled="disabled" th:selected="selected">Wybierz grupę krwi</option>
                 <option value="A_Rh_minus">A RH-</option>
                 <option value="A_Rh_plus">A RH+</option>
                 <option value="B_Rh_minus">B RH-</option>
@@ -77,13 +77,13 @@
                 <option value="Zero_Rh_plus">0 RH+</option>
 
             </select>
-            <label for="bloodGroup">Select blood group</label>
+            <label for="bloodGroup">Grupa krwi</label>
         </div>
         </div>
         <div class="row">
             <div class="input-field col s12">
                 <input id="city" name="city" type="text" th:field="*{city}" class="validate" />
-                <label for="city">City</label>
+                <label for="city">Miasto</label>
             </div>
         </div>
         <div class="row">
@@ -94,7 +94,7 @@
         </div>
 
         <button class="waves-effect waves-light btn-large red darken-3" type="Submit" value="Add">
-            <i class="material-icons right">invert_colors</i>SEND</button>
+            <i class="material-icons right">invert_colors</i>Zarejestruj</button>
 
     </form>
 </div>
