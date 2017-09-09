@@ -8,10 +8,7 @@ import com.blooddrop.services.BloodRequestService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
 @RequestMapping("/bloodrequest")
 @Controller
@@ -20,12 +17,15 @@ public class BloodRequestController {
     @Autowired
     private BloodRequestService bloodRequestService;
 
+    @Autowired
+    private SendNotification sendNotification;
+
 
     @RequestMapping(value = "", method = {RequestMethod.POST})
-    public void addBloodRequest(@RequestBody BloodRequest bloodRequest) {
+    public String addBloodRequest(@ModelAttribute BloodRequest bloodRequest) {
         bloodRequestService.addBloodRequest(bloodRequest);
-        SendNotification sendNotification = new SendNotification();
         sendNotification.sendNotificationToDonors(bloodRequest);
+        return "redirect:/";
     }
 
     @RequestMapping(value = "/{donorid}&{requestid}", method = {RequestMethod.POST})
@@ -36,8 +36,8 @@ public class BloodRequestController {
 
     @RequestMapping(value = "")
     public String createBloodRequest(Model model){
-
-        model.addAttribute("bloodGroups", BloodGroup.values());
+        model.addAttribute("bloodRequest", new BloodRequest());
+//        model.addAttribute("bloodGroups", BloodGroup.values());
         return "createBloodRequest";
     }
 }
