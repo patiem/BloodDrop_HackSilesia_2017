@@ -31,7 +31,7 @@ public class BloodRequestController {
 //        BloodRequest test = bloodRequestService.getById(bloodRequest.getId());
 //        model.addAttribute("bloodRequest", test);
         sendNotification.sendNotificationToDonors(bloodRequest);
-        return "redirect:/";
+        return "redirect:requestResults";
     }
 
     @RequestMapping(value = "/{donorid}/{requestid}")

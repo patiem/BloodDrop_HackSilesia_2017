@@ -35,14 +35,11 @@
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
 </head>
-<style>
 
-
-</style>
 <body>
 <nav class="red darken-3 lighten-1" role="navigation">
     <div class="nav-wrapper container">
-        <a id="logo-container" href="#" class="brand-logo"><i class="large material-icons">invert_colors</i>DROPBLOOD</a>
+        <a id="logo-container" th:href="@{~/}" class="brand-logo"><i class="large material-icons">invert_colors</i>DROPBLOOD</a>
         <ul class="right hide-on-med-and-down">
             <li><a href="#">Panel RCK</a></li>
         </ul>
@@ -55,59 +52,24 @@
 </nav>
 
 
-<form class="form-default col-6 center" th:method="post" th:action="@{~/bloodrequest}" th:object="${bloodRequest}" style="max-width: 600px;margin:0 auto;">
-    <h3>Grupa Krwi</h3>
-    <div class="input-field col s12">
-        <select name="bloodGroup" id="bloodGroup" th:field="*{bloodGroup}">
-            <option value="" disabled="disabled" selected="selected">Wybierz grupę krwi</option>
-            <option value="A_Rh_minus">A RH-</option>
-            <option value="A_Rh_plus">A RH+</option>
-            <option value="B_Rh_minus">B RH-</option>
-            <option value="B_Rh_plus">B RH+</option>
-            <option value="AB_Rh_minus">AB RH-</option>
-            <option value="AB_Rh_plus">AB RH+</option>
-            <option value="Zero_Rh_minus">0 RH-</option>
-            <option value="Zero_Rh_plus">0 RH+</option>
-        </select>
-    </div>
+<div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+        <h3 class=" center red-text text-red-darken-4">Twoje zapytanie zostało wysłane do</h3>
+        <div class="row center">
+            <a   class="btn btn-floating btn-large pulse red darken-3" style="width: 200px; height: 200px"><p th:text="114" style="font-size: 100px; line-height: 188px;"> </p>
+            </a>
+            <br/>
+        <br/>
+        <div class="row center">
 
+            <a th:href="@{~/bloodrequest}" id="back-button" class="btn-large waves-effect waves-light red darken-3" style="margin-top: 10px">Utwórz nowe zapytanie</a>
+            <br/>
+            <a th:href="@{~/}" id="logout-button" class="btn-large waves-effect waves-light red darken-3" style="margin-top: 10px">Wyloguj się</a>
 
-    <div class="form-group row">
-        <label for="data" class="col-2 col-form-label">Data</label>
-        <input id="data" th:name="date" th:field="*{date}" type="text" class="datepicker"/>
+            <br/>
+        </div>
     </div>
-    <div class="input-field col s12">
-        <input th:name="rck" id="rck" th:field="*{rck}" type="text" class="validate"/>
-        <label for="rck">Rck</label>
-    </div>
-    <div class="input-field col s12">
-        <input th:name="city" id="city" th:field="*{city}" type="text" class="validate"/>
-        <label for="city">City</label>
-    </div>
-    <div class="input-field col s12">
-        <input id="patient" type="text" th:field="*{patient}" class="validate"/>
-        <label for="patient">Pacjent (opcjonalnie) </label>
-    </div>
-    <button class="waves-effect waves-light btn-large red darken-3" type="Submit" value="Add">
-        <i class="material-icons right">invert_colors</i>Wyślij</button>
-
-
-    </form>
+</div>
+</div>
 </body>
 </html>
-<script>
-    $(document).ready(function () {
-        $('select').material_select();
-    });
-
-    $('.datepicker').pickadate({
-        selectMonths: true, // Creates a dropdown to control month
-        selectYears: 15, // Creates a dropdown of 15 years to control year,
-        today: 'Dzisiaj',
-        clear: 'Wyczyść',
-        close: 'Ok',
-        closeOnSelect: true, // Close upon selecting a date,
-        format: 'dd-mm-yyyy'
-    });
-
-</script>

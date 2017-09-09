@@ -28,4 +28,8 @@ public class DonorService {
     public void addDonor(Donor donor) {
         donorRepository.save(donor);
     }
+
+    public long getDonorsNumber() {
+        return donorRepository.count();
+    }
 }
