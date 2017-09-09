@@ -18,17 +18,18 @@ public class Donor {
     private String name;
     private String city;
     private BloodGroup bloodGroup;
-    @DateTimeFormat(pattern="dd.mm.yyyy")
+    @DateTimeFormat(pattern="dd-MM-yyyy")
     private Date lastDonateDate;
 
     public Donor() {
     }
 
-    public Donor(String email, String name, String city, BloodGroup bloodGroup) {
+    public Donor(String email, String name, String city, BloodGroup bloodGroup, Date lastDonateDate) {
         this.email = email;
         this.name = name;
         this.city = city;
         this.bloodGroup = bloodGroup;
+        this.lastDonateDate = lastDonateDate;
     }
 
     public Long getId() {

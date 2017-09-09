@@ -3,6 +3,7 @@ package com.blooddrop.mail;
 import com.blooddrop.bloodrequest.BloodRequest;
 import com.blooddrop.donor.Donor;
 import com.blooddrop.services.BloodRequestService;
+import com.blooddrop.services.DonorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.thymeleaf.context.Context;
@@ -14,6 +15,9 @@ public class SendNotification {
 
     @Autowired
     BloodRequestService bloodRequestService;
+
+    @Autowired
+    DonorService donorService;
 
     @Autowired
     EmailHtmlSender emailHtmlSender;

@@ -17,14 +17,25 @@ public class BloodRequest {
     private BloodGroup bloodGroup;
     @DateTimeFormat(pattern = "dd-MM-yyyy")
     private Date date;
-    private String address;
+    private String rck;
+    private String city;
     private String patient;
 
-    public BloodRequest(BloodGroup bloodGroup, Date date, String address, String patient) {
+    public BloodRequest(BloodGroup bloodGroup, Date date, String rck, String patient, String city) {
+        this.city = city;
+
         this.bloodGroup = bloodGroup;
         this.date = date;
-        this.address = address;
+        this.rck = rck;
         this.patient = patient;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
     }
 
     public BloodRequest() {
@@ -54,12 +65,12 @@ public class BloodRequest {
         this.date = date;
     }
 
-    public String getAddress() {
-        return address;
+    public String getRck() {
+        return rck;
     }
 
-    public void setAddress(String adress) {
-        this.address = adress;
+    public void setRck(String adress) {
+        this.rck = adress;
     }
 
     public String getPatient() {
