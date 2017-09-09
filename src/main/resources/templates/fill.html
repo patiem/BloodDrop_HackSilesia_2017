@@ -86,6 +86,12 @@
                 <label for="city">City</label>
             </div>
         </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <label for="data">Data</label>
+                <input id="data" th:name="date" th:field="*{lastDonateDate}" type="text" class="datepicker"/>
+            </div>
+        </div>
 
         <button class="waves-effect waves-light btn-large red darken-3" type="Submit" value="Add">
             <i class="material-icons right">invert_colors</i>SEND</button>
@@ -95,6 +101,16 @@
 <script>
     $(document).ready(function() {
         $('select').material_select();
+    });
+
+    $('.datepicker').pickadate({
+        selectMonths: true, // Creates a dropdown to control month
+        selectYears: 15, // Creates a dropdown of 15 years to control year,
+        today: 'Dzisiaj',
+        clear: 'Wyczyść',
+        close: 'Ok',
+        closeOnSelect: true, // Close upon selecting a date,
+        format: 'dd.mm.yyyy'
     });
 </script>
 </body>
