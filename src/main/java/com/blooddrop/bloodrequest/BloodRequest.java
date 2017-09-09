@@ -15,15 +15,15 @@ public class BloodRequest {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private BloodGroup bloodGroup;
-    @DateTimeFormat(pattern="dd.MM.yyyy hh:mm")
+    @DateTimeFormat(pattern="dd.MM.yyyy")
     private Date date;
-    private String adress;
+    private String address;
     private String patient;
 
-    public BloodRequest(BloodGroup bloodGroup, Date date, String adress, String patient) {
+    public BloodRequest(BloodGroup bloodGroup, Date date, String address, String patient) {
         this.bloodGroup = bloodGroup;
         this.date = date;
-        this.adress = adress;
+        this.address = address;
         this.patient = patient;
     }
 
@@ -51,12 +51,12 @@ public class BloodRequest {
         this.date = date;
     }
 
-    public String getAdress() {
-        return adress;
+    public String getAddress() {
+        return address;
     }
 
-    public void setAdress(String adress) {
-        this.adress = adress;
+    public void setAddress(String adress) {
+        this.address = adress;
     }
 
     public String getPatient() {
