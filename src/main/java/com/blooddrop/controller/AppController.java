@@ -29,7 +29,19 @@ public class AppController {
 
     @RequestMapping("")
     public String index(Model model) {
+
+        model.addAttribute("donorNumber", donorService.getDonorsNumber());
+
         return "index";
+    }
+
+    @RequestMapping("login")
+    public String login(Model model) {
+        return "login";
+    }
+    @RequestMapping("requestResults")
+    public String requestResults(Model model) {
+        return "requestResults";
     }
 
     @RequestMapping("fill")
