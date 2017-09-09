@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.util.Calendar;
 import java.util.Date;
 
 @Entity
@@ -20,6 +21,13 @@ public class Donor {
     private BloodGroup bloodGroup;
     @DateTimeFormat(pattern="dd-MM-yyyy")
     private Date lastDonateDate;
+
+    public void setDeafultDate() {
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(calendar.getTime());
+        calendar.add(Calendar.DAY_OF_YEAR, -(65));
+        this.lastDonateDate = calendar.getTime();
+    }
 
     public Donor() {
     }
@@ -82,6 +90,13 @@ public class Donor {
 
     @Override
     public String toString() {
-        return new StringBuilder(this.getEmail() + this.getBloodGroup()).toString();
+        return "Donor{" +
+                "id=" + id +
+                ", email='" + email + '\'' +
+                ", name='" + name + '\'' +
+                ", city='" + city + '\'' +
+                ", bloodGroup=" + bloodGroup +
+                ", lastDonateDate=" + lastDonateDate +
+                '}';
     }
 }
