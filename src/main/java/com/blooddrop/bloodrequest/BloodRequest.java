@@ -15,7 +15,7 @@ public class BloodRequest {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private BloodGroup bloodGroup;
-    @DateTimeFormat(pattern="dd.MM.yyyy")
+    @DateTimeFormat(pattern="dd.mm.yyyy")
     private Date date;
     private String address;
     private String patient;
@@ -25,6 +25,9 @@ public class BloodRequest {
         this.date = date;
         this.address = address;
         this.patient = patient;
+    }
+
+    public BloodRequest() {
     }
 
     public Long getId() {
