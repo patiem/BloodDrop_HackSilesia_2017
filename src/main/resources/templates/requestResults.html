@@ -56,12 +56,11 @@
     <div class="container">
         <h3 class=" center red-text text-red-darken-4">Twoje zapytanie zostało wysłane do</h3>
         <div class="row center">
-            <a   class="btn btn-floating btn-large pulse red darken-3" style="width: 200px; height: 200px"><p th:text="114" style="font-size: 100px; line-height: 188px;"> </p>
+            <a class="btn btn-floating btn-large pulse red darken-3" style="width: 200px; height: 200px"><p th:text="${count}" style="font-size: 100px; line-height: 188px;"> </p>
             </a>
             <br/>
         <br/>
         <div class="row center">
-
             <a th:href="@{~/bloodrequest}" id="back-button" class="btn-large waves-effect waves-light red darken-3" style="margin-top: 10px">Utwórz nowe zapytanie</a>
             <br/>
             <a th:href="@{~/}" id="logout-button" class="btn-large waves-effect waves-light red darken-3" style="margin-top: 10px">Wyloguj się</a>

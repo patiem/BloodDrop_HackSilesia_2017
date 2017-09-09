@@ -23,14 +23,13 @@ public class SendNotification {
     EmailHtmlSender emailHtmlSender;
 
     public Integer sendNotificationToDonors(BloodRequest bloodRequest) {
-        List<Donor> listOfDonors = bloodRequestService.getAllDonorsByBloodGroup(bloodRequest.getBloodGroup());
+        List<Donor> listOfDonors = donorService.getAllAvailableDonors(bloodRequest.getBloodGroup(), bloodRequest.getCity(), bloodRequest.getDate());
         for (Donor donor :
                 listOfDonors) {
             Context context = new Context();
             context.setVariable("donorid", donor.getId());
             context.setVariable("requestid", bloodRequest.getId());
             EmailStatus emailStatus = emailHtmlSender.send(donor.getEmail(), "We need your blood to save live!", "mail/send-notification", context);
-
     }
         return listOfDonors.size();
     }
