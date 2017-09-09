@@ -1,11 +1,13 @@
 package com.blooddrop.donor;
 
 import com.blooddrop.enums.BloodGroup;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.util.Date;
 
 @Entity
 public class Donor {
@@ -16,6 +18,8 @@ public class Donor {
     private String name;
     private String city;
     private BloodGroup bloodGroup;
+    @DateTimeFormat(pattern="dd.mm.yyyy")
+    private Date lastDonateDate;
 
     public Donor() {
     }
@@ -65,6 +69,14 @@ public class Donor {
 
     public void setBloodGroup(BloodGroup bloodGroup) {
         this.bloodGroup = bloodGroup;
+    }
+
+    public Date getLastDonateDate() {
+        return lastDonateDate;
+    }
+
+    public void setLastDonateDate(Date lastDonateDate) {
+        this.lastDonateDate = lastDonateDate;
     }
 
     @Override
