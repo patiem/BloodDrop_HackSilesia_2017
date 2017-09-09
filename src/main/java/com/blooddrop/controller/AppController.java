@@ -1,9 +1,11 @@
 package com.blooddrop.controller;
 
+import com.blooddrop.donor.Donor;
 import com.blooddrop.services.DonorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -20,13 +22,12 @@ public class AppController {
 
     @RequestMapping("fill")
     public String fill(Model model) {
-        System.out.println("ooo");
+        model.addAttribute("donor", new Donor());
         return "fill";
     }
 
     @PostMapping("fill")
-    public String onRegister(Model model) {
-        System.out.println("dupa");
+    public String onRegister(@ModelAttribute Donor donor) {
         return "results";
     }
 }
