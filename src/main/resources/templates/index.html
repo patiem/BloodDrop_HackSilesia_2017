@@ -41,11 +41,15 @@
 <nav class="red darken-3 lighten-1" role="navigation">
     <div class="nav-wrapper container">
         <a id="logo-container" href="#" class="brand-logo"><i class="large material-icons">invert_colors</i>DROPBLOOD</a>
-        <ul class="right ">
+        <ul class="right desktop">
             <li><a class="donorNumber" href="#" th:text="'Jest już znami ' + ${donorNumber + 114}"></a></li>
         </ul>
+        <ul class="right mobile">
+            <li><i class="material-icons">group</i></li>
+            <li><span th:text="${donorNumber + 114}"></span></li>
 
-        <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+        </ul>
+        <!--<a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>-->
     </div>
 </nav>
     <div class="section no-pad-bot" id="index-banner">
