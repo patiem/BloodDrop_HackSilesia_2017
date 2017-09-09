@@ -7,8 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 @Entity
@@ -21,19 +20,16 @@ public class Donor {
     private String city;
     private BloodGroup bloodGroup;
     @DateTimeFormat(pattern="dd-MM-yyyy")
-    private Date lastDonateDate = setDeafultDate();
+    private Date lastDonateDate;
 
-    private Date setDeafultDate() {
-        try {
-            return new SimpleDateFormat("yyyy-MM-dd").parse( "2017-03-29");
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-        return null;
+    public void setDeafultDate() {
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(calendar.getTime());
+        calendar.add(Calendar.DAY_OF_YEAR, -(65));
+        this.lastDonateDate = calendar.getTime();
     }
 
     public Donor() {
-        System.out.println(this.lastDonateDate);
     }
 
     public Donor(String email, String name, String city, BloodGroup bloodGroup, Date lastDonateDate) {
@@ -94,6 +90,13 @@ public class Donor {
 
     @Override
     public String toString() {
-        return new StringBuilder(this.getEmail() + this.getBloodGroup()).toString();
+        return "Donor{" +
+                "id=" + id +
+                ", email='" + email + '\'' +
+                ", name='" + name + '\'' +
+                ", city='" + city + '\'' +
+                ", bloodGroup=" + bloodGroup +
+                ", lastDonateDate=" + lastDonateDate +
+                '}';
     }
 }
