@@ -25,8 +25,11 @@ public class BloodRequestController {
 
 
     @RequestMapping(value = "", method = {RequestMethod.POST})
-    public String addBloodRequest(@ModelAttribute BloodRequest bloodRequest) {
+    public String addBloodRequest(@ModelAttribute BloodRequest bloodRequest,Model model) {
+        System.out.println(bloodRequest.getDate());
         bloodRequestService.addBloodRequest(bloodRequest);
+//        BloodRequest test = bloodRequestService.getById(bloodRequest.getId());
+//        model.addAttribute("bloodRequest", test);
         sendNotification.sendNotificationToDonors(bloodRequest);
         return "redirect:requestResults";
     }
