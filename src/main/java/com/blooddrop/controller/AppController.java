@@ -18,13 +18,15 @@ public class AppController {
         return "index";
     }
 
-    @RequestMapping("/fill")
-    public String register(Model model) {
+    @RequestMapping("fill")
+    public String fill(Model model) {
+        System.out.println("ooo");
         return "fill";
     }
 
-    @PostMapping("/fill")
+    @PostMapping("fill")
     public String onRegister(Model model) {
+        System.out.println("dupa");
         return "results";
     }
 }
