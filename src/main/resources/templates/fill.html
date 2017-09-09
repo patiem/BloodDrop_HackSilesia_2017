@@ -2,10 +2,10 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8" />
-    <meta name="author" content="Codecool" />
+    <meta name="author" content="Wicked Puppets" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Codecool Shop</title>
+    <title>Blood Drop</title>
 
     <!-- Latest compiled and minified Jquery -->
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"
@@ -37,15 +37,25 @@
 
 </head>
 <body>
+<nav class="red darken-3 lighten-1" role="navigation">
+
+<div class="nav-wrapper container">
+    <a id="logo-container " th:href="@{~/}" class="brand-logo"><i class="large material-icons">invert_colors</i>DROPBLOOD</a>
+
+    <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+</div>
+</nav>
+<br/>
 <div class="row">
     <form class="col s12" th:action="@{~/fill}" th:object="${donor}" modelAttribute="donor" method="POST">
 
         <div class="row">
             <div class="input-field col s6">
-                <input placeholder="Placeholder" name="name" id="name" type="text" th:field="*{name}" class="validate" />
+                <input name="name" id="name" type="text" th:field="*{name}" class="validate" />
                 <label for="name">Name</label>
             </div>
         </div>
+
         <div class="row">
             <div class="input-field col s6">
                 <input id="email" name="email" type="email" th:field="*{email}" class="validate" />
@@ -55,7 +65,7 @@
         <div class="row">
         <div class="input-field col s6">
             <select name="bloodGroup" id="bloodGroup" th:field="*{bloodGroup}">
-                <option value="" disabled="disabled" selected="selected">Choose your option</option>
+                <option value="" th:disabled="disabled" th:selected="selected">Choose your option</option>
                 <option value="A_Rh_minus">A RH-</option>
                 <option value="A_Rh_plus">A RH+</option>
                 <option value="B_Rh_minus">B RH-</option>
@@ -76,7 +86,7 @@
             </div>
         </div>
 
-        <button class="waves-effect waves-light btn-large" type="Submit" value="Add">
+        <button class="waves-effect waves-light btn-large red darken-3" type="Submit" value="Add">
             <i class="material-icons right">invert_colors</i>SEND</button>
 
     </form>
