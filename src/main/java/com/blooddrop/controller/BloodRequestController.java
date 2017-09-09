@@ -30,8 +30,9 @@ public class BloodRequestController {
         bloodRequestService.addBloodRequest(bloodRequest);
 //        BloodRequest test = bloodRequestService.getById(bloodRequest.getId());
 //        model.addAttribute("bloodRequest", test);
-        model.addAttribute("count", bloodRequestService.getAllBloodRequests().size());
-        sendNotification.sendNotificationToDonors(bloodRequest);
+        System.out.println(bloodRequestService.getAllBloodRequests().size());
+        Integer count = sendNotification.sendNotificationToDonors(bloodRequest);
+        model.addAttribute("count", count);
         return "requestResults";
     }
 
