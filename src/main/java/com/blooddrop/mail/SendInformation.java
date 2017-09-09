@@ -26,7 +26,7 @@ public class SendInformation {
         Context context = new Context();
         context.setVariable("id", bloodRequest.getId());
         context.setVariable("date", bloodRequest.getDate());
-        context.setVariable("address", bloodRequest.getAdress());
+        context.setVariable("address", bloodRequest.getAddress());
         EmailStatus emailStatus = emailHtmlSender.send(donor.getEmail(), "We need your blood to save live!", "mail/send-notification", context);
     }
 }
