@@ -35,6 +35,7 @@ p{
     /*display: block;*/
 
 }
+
 .rck-sign{
     position: fixed;
     top: 50%;
@@ -106,4 +107,11 @@ input:not([type]):focus:not([readonly])+label,input[type=text]:not(.browser-defa
 }
 button.picker__today:focus, button.picker__clear:focus, button.picker__close:focus{
     background-color: rgba(198, 40, 40, 0.31)!important;
+}
+
+.donorNumber {
+    color: #fff;
+    display: inline-block;
+    font-size: 2.1rem;
+    padding: 0;
 }

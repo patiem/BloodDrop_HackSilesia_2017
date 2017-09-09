@@ -35,6 +35,15 @@ public class AppController {
         return "index";
     }
 
+    @RequestMapping("login")
+    public String login(Model model) {
+        return "login";
+    }
+    @RequestMapping("requestResults")
+    public String requestResults(Model model) {
+        return "requestResults";
+    }
+
     @RequestMapping("fill")
     public String fill(Model model) {
         model.addAttribute("donor", new Donor());

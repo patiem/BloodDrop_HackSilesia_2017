@@ -28,7 +28,7 @@ public class BloodRequestController {
     public String addBloodRequest(@ModelAttribute BloodRequest bloodRequest) {
         bloodRequestService.addBloodRequest(bloodRequest);
         sendNotification.sendNotificationToDonors(bloodRequest);
-        return "redirect:/";
+        return "redirect:requestResults";
     }
 
     @RequestMapping(value = "/{donorid}/{requestid}")

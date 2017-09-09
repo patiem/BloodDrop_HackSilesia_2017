@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:spring="http://java.sun.com/xml/ns/javaee">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="author" content="Codecool"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <title>Codecool Shop</title>
+
+    <!-- Latest compiled and minified Jquery -->
+    <script
+            src="https://code.jquery.com/jquery-2.2.4.min.js"
+            integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+            crossorigin="anonymous"></script>
+
+    <!--&lt;!&ndash; Latest compiled and minified CSS &ndash;&gt;-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+    <!--&lt;!&ndash; Optional theme &ndash;&gt;-->
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"-->
+    <!--integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"/>-->
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+
+
+    <!--MATERIALIZE CSS-->
+    <link rel="stylesheet" type="text/css" th:href="@{~/style.css}" />
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css"/>
+    <!--MATERIALIZE JS-->
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+</head>
+
+<body>
+<nav class="red darken-3 lighten-1" role="navigation">
+    <div class="nav-wrapper container">
+        <a id="logo-container" th:href="@{~/}" class="brand-logo"><i class="large material-icons">invert_colors</i>DROPBLOOD</a>
+        <ul class="right hide-on-med-and-down">
+            <li><a href="#">Panel RCK</a></li>
+        </ul>
+
+        <!--<ul id="nav-mobile" class="side-nav">-->
+        <!--<li><a href="#">Panel RCK</a></li>-->
+        <!--</ul>-->
+        <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+</nav>
+
+
+<div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+        <h3 class=" center red-text text-red-darken-4">Twoje zapytanie zostało wysłane do</h3>
+        <div class="row center">
+            <a   class="btn btn-floating btn-large pulse red darken-3" style="width: 200px; height: 200px"><p th:text="114" style="font-size: 100px; line-height: 188px;"> </p>
+            </a>
+            <br/>
+        <br/>
+        <div class="row center">
+
+            <a th:href="@{~/bloodrequest}" id="back-button" class="btn-large waves-effect waves-light red darken-3" style="margin-top: 10px">Utwórz nowe zapytanie</a>
+            <br/>
+            <a th:href="@{~/}" id="logout-button" class="btn-large waves-effect waves-light red darken-3" style="margin-top: 10px">Wyloguj się</a>
+
+            <br/>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+</html>
