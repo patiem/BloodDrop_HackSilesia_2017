@@ -1,0 +1,109 @@
+body{
+    overflow: hidden;
+}
+a:hover{
+    text-decoration: none;
+}
+#download-button:hover{
+    color:white;
+    box-shadow: 0px 0px 20px #c62828;;
+}
+.nav-wrapper li:hover{
+    transition: 300ms all;
+    background: white;
+
+}
+.nav-wrapper a:hover{
+    color:#C62828;
+}
+#logo-container:hover{
+    color:white;
+}
+#download-button{
+    transition: 300ms all;
+    margin-top: 25px;
+    display: inline-block;
+
+}
+p{
+    letter-spacing: 0px;
+    max-width: 275px;
+    text-align: center;
+    margin: 0 auto;
+}
+.donators{
+    /*display: block;*/
+
+}
+.rck-sign{
+    position: fixed;
+    top: 50%;
+    right: 0px;
+    height: auto;
+    width: 100px;
+    background: #c62828;
+    transform: translateY(-50%);
+    text-align: center;
+    padding: 5px 0;
+    border:1px solid white;
+    transition: 500ms all;
+}
+.rck-sign:hover{
+    background: white;
+    border:1px solid #C62828;
+
+}
+.rck-sign:hover span{
+    color: #c62828;
+}
+.rck-sign:hover i{
+    color: #c62828;
+}
+
+.rck-sign span{
+    font-size:14px;
+    font-weight:normal;
+    color:white;
+    transition: 500ms all;
+
+}
+.rck-sign i{
+    transition: 500ms all;
+    color: white;
+    font-size:28px;
+    display: inline-block;
+}
+form{
+    max-width: 600px;
+    margin:0 auto;
+}
+.picker__today, .picker__clear,.picker__close,.picker__day.picker__day--today{
+    color:#C62828 !important;
+}
+.picker__date-display{
+    background-color:#C62828 !important;
+}
+
+input:not([type]):focus:not([readonly]),input[type=text]:not(.browser-default):focus:not([readonly]),input[type=password]:not(.browser-default):focus:not([readonly]),input[type=email]:not(.browser-default):focus:not([readonly]),input[type=url]:not(.browser-default):focus:not([readonly]),input[type=time]:not(.browser-default):focus:not([readonly]),input[type=date]:not(.browser-default):focus:not([readonly]),input[type=datetime]:not(.browser-default):focus:not([readonly]),input[type=datetime-local]:not(.browser-default):focus:not([readonly]),input[type=tel]:not(.browser-default):focus:not([readonly]),input[type=number]:not(.browser-default):focus:not([readonly]),input[type=search]:not(.browser-default):focus:not([readonly]),textarea.materialize-textarea:focus:not([readonly]) {
+    border-bottom: 1px solid #C62828!important;
+    -webkit-box-shadow: 0 1px 0 0 #C62828!important;
+    box-shadow: 0 1px 0 0 #C62828!important;
+}
+input.valid:not([type]), input.valid:not([type]):focus, input[type=text].valid:not(.browser-default), input[type=text].valid:not(.browser-default):focus, input[type=password].valid:not(.browser-default), input[type=password].valid:not(.browser-default):focus, input[type=email].valid:not(.browser-default), input[type=email].valid:not(.browser-default):focus, input[type=url].valid:not(.browser-default), input[type=url].valid:not(.browser-default):focus, input[type=time].valid:not(.browser-default), input[type=time].valid:not(.browser-default):focus, input[type=date].valid:not(.browser-default), input[type=date].valid:not(.browser-default):focus, input[type=datetime].valid:not(.browser-default), input[type=datetime].valid:not(.browser-default):focus, input[type=datetime-local].valid:not(.browser-default), input[type=datetime-local].valid:not(.browser-default):focus, input[type=tel].valid:not(.browser-default), input[type=tel].valid:not(.browser-default):focus, input[type=number].valid:not(.browser-default), input[type=number].valid:not(.browser-default):focus, input[type=search].valid:not(.browser-default), input[type=search].valid:not(.browser-default):focus, textarea.materialize-textarea.valid, textarea.materialize-textarea.valid:focus, .select-wrapper.valid>input.select-dropdown{
+    border-bottom: 1px solid #C62828!important;
+    -webkit-box-shadow: 0 1px 0 0 #C62828!important;
+    box-shadow: 0 1px 0 0 #C62828!important;
+}
+input:not([type]):focus:not([readonly])+label,input[type=text]:not(.browser-default):focus:not([readonly])+label,input[type=password]:not(.browser-default):focus:not([readonly])+label,input[type=email]:not(.browser-default):focus:not([readonly])+label,input[type=url]:not(.browser-default):focus:not([readonly])+label,input[type=time]:not(.browser-default):focus:not([readonly])+label,input[type=date]:not(.browser-default):focus:not([readonly])+label,input[type=datetime]:not(.browser-default):focus:not([readonly])+label,input[type=datetime-local]:not(.browser-default):focus:not([readonly])+label,input[type=tel]:not(.browser-default):focus:not([readonly])+label,input[type=number]:not(.browser-default):focus:not([readonly])+label,input[type=search]:not(.browser-default):focus:not([readonly])+label,textarea.materialize-textarea:focus:not([readonly])+label {
+    color: #C62828!important;
+}
+.dropdown-content li>a, .dropdown-content li>span{
+    color: #C62828!important;
+}
+
+.select-wrapper span.caret{
+    font-size:0px!important;
+}
+button.picker__today:focus, button.picker__clear:focus, button.picker__close:focus{
+    background-color: rgba(198, 40, 40, 0.31)!important;
+}

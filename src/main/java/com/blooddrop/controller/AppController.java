@@ -1,6 +1,7 @@
 package com.blooddrop.controller;
 
 import com.blooddrop.donor.Donor;
+import com.blooddrop.enums.BloodGroup;
 import com.blooddrop.services.DonorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,6 +15,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class AppController {
     @Autowired
     DonorService donorService;
+
+    @RequestMapping("filldb")
+    public String send(){
+        Donor donor = new Donor();
+        donor.setCity("Katowice");
+        donor.setBloodGroup(BloodGroup.A_Rh_plus);
+        donor.setEmail("sebastian.kt7@gmail.com");
+        donor.setName("seba");
+        donorService.addDonor(donor);
+        return "redirect:/";
+    }
 
     @RequestMapping("")
     public String index(Model model) {

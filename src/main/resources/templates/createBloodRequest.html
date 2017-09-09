@@ -40,22 +40,23 @@
 
 </style>
 <body>
-<nav class="light-blue lighten-1" role="navigation">
-    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Logo</a>
+<nav class="red darken-3 lighten-1" role="navigation">
+    <div class="nav-wrapper container">
+        <a id="logo-container" href="#" class="brand-logo"><i class="large material-icons">invert_colors</i>DROPBLOOD</a>
         <ul class="right hide-on-med-and-down">
-            <li><a href="#">BLOOD REQUEST</a></li>
-        </ul>
-
-        <ul id="nav-mobile" class="side-nav">
             <li><a href="#">Panel RCK</a></li>
         </ul>
+
+        <!--<ul id="nav-mobile" class="side-nav">-->
+        <!--<li><a href="#">Panel RCK</a></li>-->
+        <!--</ul>-->
         <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
     </div>
 </nav>
 
 
 <form class="form-default col-6 center" th:method="post" th:action="@{~/bloodrequest}" th:object="${bloodRequest}" style="max-width: 600px;margin:0 auto;">
-    <h3>Blood Group</h3>
+    <h3>Grupa Krwi</h3>
     <div class="input-field col s12">
         <select name="bloodGroup" id="bloodGroup" th:field="*{bloodGroup}">
             <option value="" disabled="disabled" selected="selected">Wybierz grupę krwi</option>
@@ -65,15 +66,15 @@
             <option value="B_Rh_plus">B RH+</option>
             <option value="AB_Rh_minus">AB RH-</option>
             <option value="AB_Rh_plus">AB RH+</option>
-            <option value="0_Rh_minus">0 RH-</option>
-            <option value="0_Rh_plus">0 RH+</option>
+            <option value="Zero_Rh_minus">0 RH-</option>
+            <option value="Zero_Rh_plus">0 RH+</option>
         </select>
     </div>
 
 
     <div class="form-group row">
-        <label class="col-2 col-form-label">Data:</label>
-        <input th:name="date" th:field="*{date}" type="text" class="datepicker"/>
+        <label for="data" class="col-2 col-form-label">Data</label>
+        <input id="data" th:name="date" th:field="*{date}" type="text" class="datepicker"/>
     </div>
     <div class="input-field col s12">
         <input th:name="date" id="adress" th:field="*{address}" type="text" class="validate"/>
@@ -83,8 +84,9 @@
         <input id="patient" type="text" th:field="*{patient}" class="validate"/>
         <label for="patient">Pacjent (opcjonalnie) </label>
     </div>
-    <button class="waves-effect waves-light btn-large" type="Submit" value="Add">
-        <i class="material-icons right">invert_colors</i>SEND</button>
+    <button class="waves-effect waves-light btn-large red darken-3" type="Submit" value="Add">
+        <i class="material-icons right">invert_colors</i>Wyślij</button>
+
 
     </form>
 </body>
